@@ -138,10 +138,11 @@ add_action( 'widgets_init', 'brucgt_widgets_init' );
  * Enqueue scripts and styles.
  */
 function brucgt_scripts() {
-	wp_enqueue_style( 'brucgt-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'brucgt-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'brucgt-style', get_theme_file_uri('css/main.css'), array(), _S_VERSION );
 
-	wp_enqueue_script( 'brucgt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'brucgt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script('alpine-collapse', '//unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js', [], _S_VERSION, true);
+	wp_enqueue_script('alpine', '//unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', [], _S_VERSION, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply text-gray-700;
+}
+
+#menu-header.menu {
+    @apply flex gap-4;
+}
+
+#menu-header.menu .menu_item  {
+    @apply font-semibold;
+}
+
+.bru-search-form {
+    @apply flex-grow;
+}
+
+.bru-search-form .aws-container {
+    @apply h-full;
+}
+
+.bru-search-form .aws-container .aws-search-field {
+    @apply pl-4;
+}
+
+.bru-search-form .aws-search-form {
+    @apply h-full rounded overflow-hidden;
+}
+
+.bru-search-form .aws-search-btn.aws-form-btn {
+    @apply px-2 w-auto ;
+}
+
+[x-cloak] {
+    display: none;
+}
